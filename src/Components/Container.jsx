@@ -1,6 +1,6 @@
 function Container({ children }) {
   return (
-    <div className="sm:max-[616px] md:max-w-[744px] lg:max-w-5xl mx-auto">
+    <div className="max-sm:max-w-xl max-md:max-w-3xl max-lg:max-w-4xl mx-auto px-8">
       {children}
     </div>
   );

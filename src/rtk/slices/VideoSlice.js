@@ -57,9 +57,8 @@ export const searchForVideos = createAsyncThunk(
 );
 
 const VideoSlice = createSlice({
-  initialState: null,
+  initialState: [],
   name: "VideoSlice",
-  reducers: {},
   extraReducers: (builder) => {
     builder.addCase(getTrending.fulfilled, (state, action) => {
       state = [...action.payload];
