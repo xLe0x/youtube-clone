@@ -1,3 +1,3 @@
 # youtube-clone
 
-## (Live Demo)[https://ammar-youtube-clone.vercel.app/]
+## [Link](https://ammar-youtube-clone.vercel.app/)
