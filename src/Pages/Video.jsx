@@ -39,7 +39,6 @@ export default function Video() {
       <div className="related flex flex-col justify-between items-end max-sm:items-stretch max-sm:justify-center max-sm:mt-4">
         {relatedVideos &&
           relatedVideos.map((related) => {
-            console.log(related);
             return (
               <VideoBox
                 title={related.title}
