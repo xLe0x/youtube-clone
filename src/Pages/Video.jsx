@@ -17,7 +17,7 @@ export default function Video() {
     dispatch(getRelatedVideos(id));
   }, [id]);
   return (
-    <div className="grid grid-cols-2 max-sm:grid-cols-1">
+    <div className="grid grid-cols-2 max-md:grid-cols-1 mt-4 place-content-center">
       <div className="flex flex-col">
         {video && (
           <>
@@ -28,7 +28,7 @@ export default function Video() {
               allowFullScreen
             ></iframe>
             <div className="desc bg-[#3f3f3f] rounded-sm">
-              <div className="ml-0 p-1 sm:p-3 text-center sm:text-start sm:ml-4 sm:w-2/4 mt-3 w-full">
+              <div className="ml-0 p-4 text-center sm:text-start sm:ml-4 mt-3">
                 <h3 className="text-3xl mb-4 font-bold">{video.title}</h3>
                 <p>{video.description}</p>
               </div>
@@ -36,11 +36,12 @@ export default function Video() {
           </>
         )}
       </div>
-      <div className="related flex flex-col justify-between items-end max-sm:items-stretch max-sm:justify-center max-sm:mt-4">
+      <div className="related flex flex-col max-md:mx-auto ml-auto justify-between items-center max-md:items-stretch max-md:justify-center max-md:mt-4">
         {relatedVideos &&
           relatedVideos.map((related) => {
             return (
               <VideoBox
+                isContentDotted={false}
                 title={related.title}
                 viewCount={related.viewCount}
                 thumbnail={

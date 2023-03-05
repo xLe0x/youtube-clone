@@ -9,6 +9,7 @@ export default function VideoBox({
   viewCount,
   published,
   video_id,
+  isContentDotted,
 }) {
   return (
     <>
@@ -35,12 +36,19 @@ export default function VideoBox({
                 </div>
               )}
               <div>
-                <h4 className="text-base font-medium mb-2">{`${title.slice(
-                  0,
-                  20
-                )}...`}</h4>
+                <h4 className="text-base font-medium mb-2">
+                  {isContentDotted
+                    ? `${title.slice(0, 20)}...`
+                    : title.length > 50
+                    ? `${title.slice(0, 40)}...`
+                    : title}
+                </h4>
                 <div className="author-info flex flex-col text-gray-300">
-                  <p className="name mb-2">{`${authorName.slice(0, 15)}...`}</p>
+                  <p className="name mb-2">
+                    {isContentDotted
+                      ? `${authorName.slice(0, 15)}...`
+                      : authorName}
+                  </p>
                   <div className="flex sm:flex-col w-full items-stretch">
                     <p className="mr-4">
                       {numeral(viewCount).format("0.a")} views
