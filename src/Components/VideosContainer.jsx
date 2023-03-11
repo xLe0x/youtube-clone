@@ -9,7 +9,7 @@ export default function VideosContainer() {
   const dispatch = useDispatch();
   const [header, setHeader] = useState("");
   useEffect(() => {
-    dispatch(searchForVideos(searchedValue));
+    dispatch(searchForVideos(encodeURIComponent(searchedValue)));
     setHeader(`You Searched For "${searchedValue}"`);
   }, [searchedValue]);
 
