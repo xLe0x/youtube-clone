@@ -15,7 +15,9 @@ export default function AppNavbar() {
   return (
     <nav className="w-full backdrop-blur-3xl backdrop-brightness-150 sticky top-0 left-0 z-50 py-1 bg-transparent">
       <div className="mx-5 flex justify-between items-center p-3">
-        <img src={Logo} />
+        <a href="/">
+          <img src={Logo} alt="youtube logo" />
+        </a>
         <form onSubmit={(e) => e.preventDefault()}>
           <input
             type="text"

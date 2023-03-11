@@ -24,8 +24,9 @@ export default function VideosContainer() {
       <div className="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mx-2 p-3">
         {Array.isArray(videos) &&
           videos.map((video) => {
-            {
-              video.channelThumbnail && video.thumbnail && (
+            return (
+              video.thumbnail &&
+              video.channelThumbnail && (
                 <VideoBox
                   title={video.title}
                   viewCount={video.viewCount}
@@ -44,8 +45,8 @@ export default function VideosContainer() {
                   video_id={video.videoId}
                   key={video.videoId}
                 />
-              );
-            }
+              )
+            );
           })}
       </div>
     </>
