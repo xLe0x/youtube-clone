@@ -24,27 +24,28 @@ export default function VideosContainer() {
       <div className="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mx-2 p-3">
         {Array.isArray(videos) &&
           videos.map((video) => {
-            console.log(video);
-            return (
-              <VideoBox
-                title={video.title}
-                viewCount={video.viewCount}
-                thumbnail={
-                  video.thumbnail[1]
-                    ? video.thumbnail[1].url
-                    : video.thumbnail[0].url
-                }
-                channelThumbnail={
-                  video.channelThumbnail[1]
-                    ? video.channelThumbnail[1].url
-                    : video.channelThumbnail[0].url
-                }
-                authorName={video.channelTitle}
-                published={video.publishedText}
-                video_id={video.videoId}
-                key={video.videoId}
-              />
-            );
+            {
+              video.channelThumbnail && video.thumbnail && (
+                <VideoBox
+                  title={video.title}
+                  viewCount={video.viewCount}
+                  thumbnail={
+                    video.thumbnail[1]
+                      ? video.thumbnail[1].url
+                      : video.thumbnail[0].url
+                  }
+                  channelThumbnail={
+                    video.channelThumbnail[1]
+                      ? video.channelThumbnail[1].url
+                      : video.channelThumbnail[0].url
+                  }
+                  authorName={video.channelTitle}
+                  published={video.publishedText}
+                  video_id={video.videoId}
+                  key={video.videoId}
+                />
+              );
+            }
           })}
       </div>
     </>
