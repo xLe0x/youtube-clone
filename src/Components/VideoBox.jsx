@@ -14,7 +14,7 @@ export default function VideoBox({
   return (
     <>
       {thumbnail && title && (
-        <div className="flex flex-col rounded-sm min-w-full m-4 hover:backdrop-brightness-200 ease-out transition-all duration-500">
+        <div className="flex flex-col rounded-sm min-w-full m-4 hover:backdrop-brightness-200 ease-out transition-all duration-500 mx-2">
           <Link to={`/video/${video_id}`}>
             <div className="poster">
               <img
