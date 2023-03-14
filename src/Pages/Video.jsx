@@ -52,12 +52,14 @@ export default function Video() {
 
   useEffect(() => {
     dispatch(searchForVideos(encodeURIComponent(searchedValue)));
-    setVideosTitle(`You Searched For "${searchedValue}"`);
+    if (searchedValue !== "") {
+      setVideosTitle(`You searched for "${searchedValue}"`);
+    }
   }, [searchedValue]);
 
   return (
     <div className="grid grid-cols-2 max-md:grid-cols-1 mt-4">
-      <div className="flex flex-col lg:min-w-[850px]">
+      <div className="flex flex-col">
         {typeof video == "object" && (
           <>
             <iframe
@@ -130,7 +132,7 @@ export default function Video() {
       </div>
       <div className="flex flex-col ml-auto max-md:mx-auto justify-between items-center max-md:justify-center max-md:mt-8">
         {typeof relatedVideos != "string" && (
-          <h3 className="text-xl">{videosTitle}</h3>
+          <h3 className="text-2xl text-left w-full mb-4">{videosTitle}</h3>
         )}
         {Array.isArray(relatedVideos) && !Array.isArray(video)
           ? relatedVideos.map((related) => {
