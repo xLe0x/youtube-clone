@@ -64,6 +64,10 @@ const VideoSlice = createSlice({
       state = [...action.payload];
       return state;
     });
+    builder.addCase(getTrending.rejected, (state, action) => {
+      state = "something went wrong please try again later";
+      return state;
+    });
     builder.addCase(getOneVideo.fulfilled, (state, action) => {
       state = action.payload;
       return state;

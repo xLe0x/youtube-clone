@@ -27,6 +27,10 @@ const RelatedVideosSlice = createSlice({
       state = action.payload;
       return state;
     });
+    builder.addCase(getRelatedVideos.rejected, (state, action) => {
+      state = "something went wrong please check your network connection";
+      return state;
+    });
   },
 });
 

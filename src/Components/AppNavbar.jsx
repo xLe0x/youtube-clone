@@ -13,10 +13,13 @@ export default function AppNavbar() {
   }
 
   return (
-    <nav className="w-full backdrop-blur-3xl backdrop-brightness-150 sticky top-0 left-0 z-50 py-1 bg-transparent">
-      <div className="mx-5 flex justify-between items-center p-3">
-        <a href="/">
+    <nav className="w-full backdrop-blur-xl sticky top-0 left-0 z-50 bg-transparent">
+      <div className="mx-4 flex justify-between items-center p-2">
+        <a href="/" className="flex items-center justify-center">
           <img src={Logo} alt="youtube logo" />
+          <p className="ml-1 max-md:hidden font-medium text-sm select-none">
+            by Ammar Saber
+          </p>
         </a>
         <form onSubmit={(e) => e.preventDefault()}>
           <input

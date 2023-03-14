@@ -9,7 +9,7 @@ export default function VideosContainer() {
   const dispatch = useDispatch();
   const [header, setHeader] = useState("");
   useEffect(() => {
-    dispatch(searchForVideos(encodeURIComponent(searchedValue)));
+    dispatch(searchForVideos(searchedValue));
     setHeader(`You Searched For "${searchedValue}"`);
   }, [searchedValue]);
 
@@ -22,7 +22,7 @@ export default function VideosContainer() {
     <>
       <p className="text-4xl ml-4">{header}</p>
       <div className="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mx-2 p-3">
-        {Array.isArray(videos) &&
+        {Array.isArray(videos) && videos.length > 0 ? (
           videos.map((video) => {
             return (
               video.thumbnail &&
@@ -47,7 +47,10 @@ export default function VideosContainer() {
                 />
               )
             );
-          })}
+          })
+        ) : (
+          <p className="my-4 col-span-full text-lg">{videos}</p>
+        )}
       </div>
     </>
   );
