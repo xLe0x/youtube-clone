@@ -28,14 +28,12 @@ export default function Hero() {
       </div>
       <div className="ml-0 p-1 sm:p-3 text-center sm:text-start sm:ml-4 sm:w-1/2 mt-3 w-full">
         <h3 className="text-3xl mb-4 font-bold max-w-full">
-          {Array.isArray(video) && video.length > 0
-            ? video[0].title
-            : ".................."}
+          {Array.isArray(video) && video.length > 0 ? video[0].title : ""}
         </h3>
         <p className="max-w-full">
           {Array.isArray(video) && video.length > 0
             ? `${video[0].description.slice(0, 200)}...`
-            : "............................................."}
+            : ""}
         </p>
       </div>
     </Link>

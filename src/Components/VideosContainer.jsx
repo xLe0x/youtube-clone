@@ -21,7 +21,7 @@ export default function VideosContainer() {
   return (
     <>
       <p className="text-4xl ml-4">{header}</p>
-      <div className="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mx-2 p-3">
+      <div className="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mx-2 p-4">
         {Array.isArray(videos) && videos.length > 0 ? (
           videos.map((video) => {
             return (
@@ -49,7 +49,9 @@ export default function VideosContainer() {
             );
           })
         ) : (
-          <p className="my-4 col-span-full text-lg">{videos}</p>
+          <p className="my-4 col-span-full text-lg">
+            {Array.isArray(videos) && videos}
+          </p>
         )}
       </div>
     </>
